@@ -1,0 +1,217 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderla</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .details {
+            position: relative;
+            top: 120px;
+            /* left: 40px;
+            right: 40px; */
+            margin: 0px 40px;
+        }
+
+        .details .heading h1{
+            font-size: 50px;
+        }
+
+        .details .heading span{
+            font-size: 30px;
+        }
+
+        .details .heading .checked {
+            color: var(--orange);
+        }
+
+        .details .sites {
+            margin-top: 10px;
+        }
+
+        .details .sites button{
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-width: 0px;
+            border-radius: 4px;
+        }
+
+        .details .sites button:hover {
+            /* color: rgba(255, 255, 255, 1); */
+            box-shadow: 0 3px 5px #6fa2ee;
+        }
+
+        .details .info {
+            margin-top: 30px;
+        }
+
+        .details .info  p{
+            font-size: 17px;
+        }
+        
+        .details .info .timings {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 30%;
+            margin: 5px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table th{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="details">
+        <div class="heading">
+            <h1>Wonderla</h1>
+            <span>Rating: </span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <h2>Location: Ravirala</h2>
+        </div>
+
+        <div class="sites">
+            <button id ="mapsBtn" onclick="window.location.href = 'https://www.google.com/maps/dir/17.4629725,78.4865596/Wonderla+Amusement+Park,+Hyderabad,+Nehru+Outer+Ring+Road+Exit+No.+13,+Raviryal,+Telangana+501510/@17.3374903,78.3977493,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcba45c8a25c483:0xae598b1bf0ebc558!2m2!1d78.5285053!2d17.2172886?hl=en';" >View in maps</button>
+            <button id="webBtn" onclick="window.location.href = 'https://www.wonderla.com/hyderabad-park/';">Visit website</button>
+        </div>
+
+        <div class="info">
+            <h2>Timings</h2>
+            <p class="timings">
+                Monday	   11am – 6pm <br>
+                Tuesday	   11am – 6pm <br>
+                Wednesday  11am – 6pm <br>
+                Thursday   11am – 6pm <br>
+                Friday	   11am – 6pm <br>
+                Saturday   11am – 7pm <br>
+                Sunday     11am – 7pm <br>
+            </p>
+
+            <br>
+            <h2>Entry Fee</h2>
+            <p>
+                On weekdays, it charges INR 845 per person for adults, INR 675 per person for children, INR 635 per person for senior citizens between 60 to 69 years of age and INR 420 per person for senior citizens above 70 years. On weekends, it charges INR 1060 per person for adults, INR 850 per person for children, INR 795 per person for senior citizens between 60 to 69 years of age and INR 530 per person for senior citizens above 70 years.
+            </p>
+
+            <br>
+            <h2>About</h2>
+            <p>
+                Fill your day with loads of happiness, joy, laughter and luxury at Wonderla Amusement Park. Widely known for its breathtaking charm, majestic views and world-class amenities, the Wonderla Amusement Park invites holidaymakers to do something new and different than just casual dinners in Hyderabad.
+
+                Combining state-of-the-art equipment with high international safety standards, the amusement park offers mind-boggling opportunities to spend some quality time with your loved ones. There are adrenaline-fuelled rides for experience seekers, water pools for swimmers and colourful rides with attractive characters for small children.
+                
+                You can also stop at the food stalls to satisfy your hunger pangs with your favourite dish or visit the souvenir shops to bring some gifts back home.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

@@ -1,0 +1,211 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brwon Town Resort</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .details {
+            position: relative;
+            top: 120px;
+            /* left: 40px;
+            right: 40px; */
+            margin: 0px 40px;
+        }
+
+        .details .heading h1{
+            font-size: 50px;
+        }
+
+        .details .heading span{
+            font-size: 30px;
+        }
+
+        .details .heading .checked {
+            color: var(--orange);
+        }
+
+        .details .sites {
+            margin-top: 10px;
+        }
+
+        .details .sites button{
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-width: 0px;
+            border-radius: 4px;
+        }
+
+        .details .sites button:hover {
+            /* color: rgba(255, 255, 255, 1); */
+            box-shadow: 0 3px 5px #6fa2ee;
+        }
+
+        .details .info {
+            margin-top: 30px;
+        }
+
+        .details .info  p{
+            font-size: 17px;
+        }
+        
+        .details .info .timings {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 30%;
+            margin: 5px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table th{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="details">
+        <div class="heading">
+            <h1>Brown Town Resort</h1>
+            <span>Rating: </span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <h2>Location: Moinabad</h2>
+        </div>
+
+        <div class="sites">
+            <button id ="mapsBtn" onclick="window.location.href = 'https://www.google.com/maps/dir//brown+town+resort/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bcb997373a9678d:0xeef417b6c58682c?sa=X&ved=2ahUKEwiX5oL2vvfyAhUgzjgGHUsXDVkQ9Rd6BAhOEAQ';" >View in maps</button>
+            <button id="webBtn" onclick="window.location.href = 'https://browntownresort.com/';">Visit website</button>
+        </div>
+
+        <div class="info">
+            <h2>Price</h2>
+            <p>
+                Rs.6000 per night
+            </p>
+
+            <br>
+            <h2>Activities</h2>
+            <p>
+                Dedicated Verandas, Swimming Pool, Spa, Tennis Court, Volleyball Court, Squash, Badminton Court, Table Tennis, Pool Table, Cricket Nets, Board Games, and Cycling Spot
+            </p>
+
+            <br>
+            <h2>About</h2>
+            <p>
+                Rejuvenating amidst nature's eloquence, Brown Town Resort has successfully brought people closer to the environment's magnificence. With a mystically extensive space setup, this delightful resort guides you to the inner depths of nature and lets you relax soulfully, away from the city chaos.
+
+                Located in the mesmerizing scenic zones of Moinabad, Brown Town Resort serves its diverse guests with luxury and comfort. It is one of the best resorts for couples near Hyderabad. All the resort suites and villas offer fascinating window views, which treat the eyes. With a wide range of accommodation design options, Brown Town Resort has a room for all kinds of needs to choose from, including Vintage Studio, Lemon Suites, Haveli, Swasthanam, and much more.
+
+                The Pavilion Fine Dining Restaurant serves mouth-watering cuisines, extremely rich in taste. The menu offers delightful dishes of all kinds; the flavorsome North Indian, heavenly South Indian, zestful Chinese, and exotic continental food. All the dishes are prepared with utmost attention and love, certain to leave you salivating!
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

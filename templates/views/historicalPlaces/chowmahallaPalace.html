@@ -1,0 +1,263 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chowmahalla Palace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .details {
+            position: relative;
+            top: 120px;
+            /* left: 40px;
+            right: 40px; */
+            margin: 0px 40px;
+        }
+
+        .details .heading h1{
+            font-size: 50px;
+        }
+
+        .details .heading span{
+            font-size: 30px;
+        }
+
+        .details .heading .checked {
+            color: var(--orange);
+        }
+
+        .details .sites {
+            margin-top: 10px;
+        }
+
+        .details .sites button{
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-width: 0px;
+            border-radius: 4px;
+        }
+
+        .details .sites button:hover {
+            /* color: rgba(255, 255, 255, 1); */
+            box-shadow: 0 3px 5px #6fa2ee;
+        }
+
+        .details .info {
+            margin-top: 30px;
+        }
+
+        .details .info  p{
+            font-size: 17px;
+        }
+
+        /* .details .info ul{
+            margin-left: 20px;
+        } */
+        
+        .details .info .timings {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 30%;
+            margin: 5px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table th{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="details">
+        <div class="heading">
+            <h1>Chowmahalla Palace</h1>
+            <span>Rating: </span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star-half-o checked"></span>
+            <h2>Location: Khilwat</h2>
+        </div>
+
+        <div class="sites">
+            <button id ="mapsBtn" onclick="window.location.href = 'https://www.google.com/maps/dir//chowmahalla+palace/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bcb978adaaaaaab:0x4dd9d545daddebe8?sa=X&ved=2ahUKEwjI-_bFrvLyAhXDfH0KHf-qAJQQ9Rd6BAh_EAU';" >View in maps</button>
+            <button id="webBtn" onclick="window.location.href = 'https://www.telanganatourism.gov.in/partials/destinations/heritage-spots/hyderabad/chowmahalla-palace.html';">Visit website</button>
+        </div>
+
+        <div class="info">
+            <h2>Timings</h2>
+            <p class="timings">
+                <!-- Monday	   10am – 5pm <br>
+                Tuesday	   10am – 5pm <br>
+                Wednesday  10am – 5pm <br>
+                Thursday   10am – 5pm <br>
+                Friday	   - <br>
+                Saturday   10am – 5pm <br>
+                Sunday     10am – 5pm <br> -->
+                <table>
+                    <tr class='tableHead'>
+                        <th>DAY</th>
+                        <th>TIMINGS</th>
+                    </tr>
+                    <tr>
+                        <th>MONDAY</th>
+                        <th>10:00am - 5:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>TUESDAY</th>
+                        <th>10:00am - 5:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>WEDNESDAY</th>
+                        <th>10:00am - 5:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>THURSDAY</th>
+                        <th>10:00am - 5:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>FRIDAY</th>
+                        <th>-</th>
+                    </tr>
+                    <tr>
+                        <th>SATURDAY</th>
+                        <th>10:00am - 5:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>SUNDAY</th>
+                        <th>10:00am - 5:00pm</th>
+                    </tr>
+                   
+                </table>
+            </p>
+
+            <br>
+            <h2>Entry Fee</h2>
+            <ul>
+                <!-- <li>Indian citizens – ₹80 per person</li>
+                <li>Foreign nationals – ₹200 per person</li> -->
+                <table>
+                    <tr>
+                        <th>INDIANS</th>
+                        <th>Rs.80/-</th>
+                    </tr>
+                    <tr>
+                        <th>FOREIGNERS</th>
+                        <th>Rs.200/-</th>
+                    </tr>
+                </table>
+            </ul>
+
+            <br>
+            <h2>About</h2>
+            <p>
+                Built in the 18th century, Chowmahalla Palace was the center of governance for the Asaf Jahi dynasty and later served as the residence for the Nizams of Hyderabad. All the ceremonial functions were held at the palace. The vast structure has two courtyards, a grand darbar hall called Khilwat along with fountains, and gardens covering 12 acres of land. The Southern courtyard is the oldest part of the palace and has four smaller palaces Afzal Mahal, Aftab Mahal, Tahniyat Mahal, and Mahtab Mahal. The Northern courtyard, which once housed the administrative wing and Shishe-Alat, has a long corridor with rooms facing the central fountain and pool. It is an impressive structure with ornate stucco work, and the darbar hall has a marble platform that once used to be the royal seat.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

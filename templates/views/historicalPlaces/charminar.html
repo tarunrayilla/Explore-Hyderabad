@@ -1,0 +1,267 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charminar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .details {
+            position: relative;
+            top: 120px;
+            /* left: 40px;
+            right: 40px; */
+            margin: 0px 40px;
+        }
+
+        .details .heading h1{
+            font-size: 50px;
+        }
+
+        .details .heading span{
+            font-size: 30px;
+        }
+
+        .details .heading .checked {
+            color: var(--orange);
+        }
+
+        .details .sites {
+            margin-top: 10px;
+        }
+
+        .details .sites button{
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-width: 0px;
+            border-radius: 4px;
+        }
+
+        .details .sites button:hover {
+            /* color: rgba(255, 255, 255, 1); */
+            box-shadow: 0 3px 5px #6fa2ee;
+        }
+
+        .details .info {
+            margin-top: 30px;
+        }
+
+        .details .info  p{
+            font-size: 17px;
+        }
+
+        /* .details .info ul{
+            margin-left: 20px;
+        } */
+        
+        .details .info .timings {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        /* .titles{
+            text-align: center;
+        } */
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 30%;
+            margin: 5px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table th{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="details">
+        <div class="heading">
+            <h1>Charminar</h1>
+            <span>Rating: </span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star-half-o checked"></span>
+            <h2>Location: Ghansi Bazar</h2>
+        </div>
+
+        <div class="sites">
+            <button id ="mapsBtn" onclick="window.location.href = 'https://www.google.com/maps/dir/17.4629725,78.4865596/charminar/@17.412514,78.4472124,13z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb978a6e1a939b:0xcb5a69e4aaf113fb!2m2!1d78.4747141!2d17.3615555';" >View in maps</button>
+            <button id="webBtn" onclick="window.location.href = 'https://www.telanganatourism.gov.in/partials/destinations/heritage-spots/hyderabad/charminar.html';">Visit website</button>
+        </div>
+
+        <div class="info">
+            <h2 class="titles">Timings</h2>
+            <p class="timings">
+                <!-- Monday	   9:30am – 5:30pm <br>
+                Tuesday	   9:30am – 5:30pm <br>
+                Wednesday  9:30am – 5:30pm <br>
+                Thursday   9:30am – 5:30pm <br>
+                Friday	   9:30am – 5:30pm <br>
+                Saturday   9:30am – 5:30pm <br>
+                Sunday     9:30am – 5:30pm <br> -->
+                <table>
+                    <tr class='tableHead'>
+                        <th>DAY</th>
+                        <th>TIMINGS</th>
+                    </tr>
+                    <tr>
+                        <th>MONDAY</th>
+                        <th>9:30am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>TUESDAY</th>
+                        <th>9:30am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>WEDNESDAY</th>
+                        <th>9:30am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>THURSDAY</th>
+                        <th>9:30am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>FRIDAY</th>
+                        <th>9:30am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>SATURDAY</th>
+                        <th>9:30am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>SUNDAY</th>
+                        <th>9:30am - 5:30pm</th>
+                    </tr>
+                   
+                </table>
+            </p>
+
+            <br>
+            <h2 class="titles">Entry Fee</h2>
+            <ul>
+                <!-- <li>Indian citizens – ₹5 per person</li>
+                <li>Foreign nationals – ₹100 per person</li> -->
+                <table>
+                    <tr>
+                        <th>INDIANS</th>
+                        <th>Rs.5/-</th>
+                    </tr>
+                    <tr>
+                        <th>FOREIGNERS</th>
+                        <th>Rs.100/-</th>
+                    </tr>
+                </table>
+            </ul>
+
+            <br>
+            <h2 class="titles">About</h2>
+            <p>
+                The Four Minarets, also known as Charminar, is another monument built by the Qutb Shahi dynasty. There are many folklores about the true origin of this building with some suggesting that the structure was built to mark the end of an extremely deadly Cholera. There’s another interesting tale that Charminar was the spot where Qutb Shahi got the first glimpse of his future queen to be Rani Bhagmati. Charminar is a square structure made of granite, pulverized marble, mortar and limestone and is known for its balustrades, balconies and stucco decorations. The four minarets that are 56-meters tall stand at each corner of the main structure. Each minaret has a double balcony, and there are 149 steps to reach the upper floor. There is a mosque on the top floor of the four-storied Charminar. It is said that an underground tunnel that was built to help kings and queens escape during an enemy attack connects Charminar with Golconda fort.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

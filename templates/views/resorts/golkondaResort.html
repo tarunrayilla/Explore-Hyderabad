@@ -1,0 +1,209 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golkonda Resort</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .details {
+            position: relative;
+            top: 120px;
+            /* left: 40px;
+            right: 40px; */
+            margin: 0px 40px;
+        }
+
+        .details .heading h1{
+            font-size: 50px;
+        }
+
+        .details .heading span{
+            font-size: 30px;
+        }
+
+        .details .heading .checked {
+            color: var(--orange);
+        }
+
+        .details .sites {
+            margin-top: 10px;
+        }
+
+        .details .sites button{
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-width: 0px;
+            border-radius: 4px;
+        }
+
+        .details .sites button:hover {
+            /* color: rgba(255, 255, 255, 1); */
+            box-shadow: 0 3px 5px #6fa2ee;
+        }
+
+        .details .info {
+            margin-top: 30px;
+        }
+
+        .details .info  p{
+            font-size: 17px;
+        }
+        
+        .details .info .timings {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 30%;
+            margin: 5px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table th{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="details">
+        <div class="heading">
+            <h1>Golkonda Resort</h1>
+            <span>Rating: </span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <h2>Location: Gandipet</h2>
+        </div>
+
+        <div class="sites">
+            <button id ="mapsBtn" onclick="window.location.href = 'https://www.google.com/maps/dir//golkonda+resorts/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bcb94ea0407ff2b:0x44119678056c3677?sa=X&ved=2ahUKEwjRxK2hvPfyAhV7yTgGHbuVCMYQ9Rd6BAhJEAQ';" >View in maps</button>
+            <button id="webBtn" onclick="window.location.href = 'http://www.golkondaresorts.com/';">Visit website</button>
+        </div>
+
+        <div class="info">
+            <h2>Price</h2>
+            <p>
+                Rs.10300 per night
+            </p>
+
+            <br>
+            <h2>Activities</h2>
+            <p>
+                2 Swimming Pools for adults, 1 Kids Pool, Spa and Wellness Centre, Salon, Tennis Court, Volleyball Court, Squash, Badminton Court, Table Tennis, Pool Table, Board Games and souvenir store.
+            </p>
+
+            <br>
+            <h2>About</h2>
+            <p>
+                For all those who are looking to spend the perfect weekend in the lap of nature, Golkonda Resorts and Spa can be the right place for you. Ideal for both leisure and corporate outings, the resort blends the modern luxuries with glories of the past and provides a royal experience that is beyond the expectations.
+
+                Spread over an area of 13 acres of land, the Golkonda Resorts and Spa is one of the best resorts in Hyderabad, that allows you to witness the breathtaking view of the Osman Sagar Lake while you enjoy your stay in the accommodation of your choice. You are sure to surrender to unrivalled privacy with each room and villa that exudes a vibe of contemporary living. In total, the resort features 40 villas and 4 suites that are perfect to escape from the monotonous life.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

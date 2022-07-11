@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 15px 30px;
+        }
+
+        .form {
+            background-color: #dfdddd;
+            padding: 10px 20px 15px 20px ;
+            border: 1px solid black;
+            border-radius: 4px;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[tpe="checkbox"],
+        input[type="email"],
+        select,
+        textarea {
+            padding: 7px;
+            border: 1px solid gray;
+            border-radius: 3px;
+            width: 95%;
+            margin: 4px 0px;
+        }
+
+        fieldset{
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 3px;
+
+        }
+
+        .heading {
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            color: white;
+            background-color:rgb(11, 184, 11);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color:rgb(76, 230, 76);
+        }
+        #message {
+            color: red;
+            text-align: center;
+        }
+        #valid{
+            text-align: center;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="message">
+        <!-- <h3> hello </h3> -->
+        {% for msg in messages %}
+            <h3>{{msg}}</h3>
+        {% endfor %}
+    </div>
+    <p id="valid"></p>
+    <div class="form">
+        <h2 class="heading">Table Booking</h2>
+    <hr>
+    <form name="form1" action="register" method="POST">
+        {% csrf_token %}
+        <p>Restaurant<span style="color: red;">*</span>
+            <select name="restaurant" id="res" required>
+                <option value="">--Select the restaurant--</option>
+                <option value="Paradise">Paradise</option>
+                <option value="Hyatt Place">Park Hyatt</option>
+                <option value="Mariott">Mariott</option>
+                <option value="Radisson">Radisson</option>
+                <option value="Novotel">Novotel</option>
+                <option value="Hyatt Place">Hyatt Place</option>
+            </select>
+        </p>
+        <!-- <p>Name<span style="color: red;">*</span> <input type="text" name="name" required></p> -->
+        <p>Phone<span style="color: red;">*</span> <input type="text" name="phone" required></p>
+        <!-- <p>Email<span style="color: red;">*</span>
+            <input type="email" name="email" id="email" required>
+        </p> -->
+        <p>Date<span style="color: red;">*</span>
+            <input type="date" name="date" id="date" required>
+        </p>
+        <p>Time<span style="color: red;">*</span>
+            <input type="time" name="time" id="time" required>
+        </p>
+        <p>Number of attendies  <input type="number" name="attendies" min="0" max="8"></p>
+        <p>
+            Comments <br><textarea name="comments" id="comments" cols="60" rows="6" placeholder="Write here...."></textarea>
+        </p>
+        <input type="submit" value="Submit" onclick="validate(document.form1.phone)">
+        
+    </form>
+    </div>
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+    <script>
+
+        var p = document.getElementById('valid')
+        function validate(inputtxt) {
+            var q = new Date()
+            var today = new Date(q.getFullYear(), q.getMonth(), q.getDate())
+            var myDate = new Date(document.getElementById('date').value)
+
+            var todayTime = q.getHours()+':'+q.getMinutes()
+            var myTime = document.getElementById('time').value
+            
+            var phoneno = /^\d{10}$/;
+            if(!(inputtxt.value.match(phoneno))) {
+                document.form1.phone.focus()
+                p.innerHTML = "Invalid Number"
+                //document.form1.phone.style.border = '2px solid red'
+                event.preventDefault()
+                //return false;
+            }
+            else if(today > myDate) {
+                document.form1.date.focus()
+                p.innerHTML = "Invalid Date"
+                //document.form1.date.style.border = '2px solid red'
+                event.preventDefault()
+            }
+            else if(today.getDate() == myDate.getDate() && todayTime > myTime) {
+                document.form1.time.focus()
+                p.innerHTML = "Invalid Time"
+                //document.form1.time.style.border = '2px solid red'
+                event.preventDefault()
+            }
+            
+        }
+    </script>
+</body>
+</html>

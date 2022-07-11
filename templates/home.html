@@ -1,0 +1,185 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyderabad</title>
+    <!-- <link rel="stylesheet" href="style/nav.css"> -->
+    <link rel="stylesheet" href="{% static 'style/style.css' %}" type="text/css">
+    
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                {% if user.is_authenticated %}
+                <a href="#">Hello {{ user.username }}!</a>
+                <a href="accounts/logout">Logout</a>
+                {% else %}
+                <a href="accounts/signup">Sign Up</a>
+                <a href="accounts/login">Login</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header> -->
+    
+    <section class="home">
+        <div class="image-container">
+            <img src="{% static 'Pics/golkondaFort.jpeg' %}" alt="img">
+            <img src="{% static 'Pics/leoniaResort.jpg' %}" alt="img2">
+            <img src="{% static 'Pics/forumMall.jpg' %}" alt="img3">
+            <img src="{% static 'Pics/marriott.jpg' %}" alt="img4">
+        </div>
+
+        <div class="controls">
+            <span id="btn1" class="active"></span>
+            <span id="btn2"></span>
+            <span id="btn3"></span>
+            <span id="btn4"></span>
+        </div>
+
+        <div class="content">
+            <h3>Welcome to Hyderabad</h3>
+            <p>Discover new places with us!</p>
+        </div>
+    </section>
+
+    <section class="locations">
+        <h1 class="heading">
+            <span>C</span>
+            <span>A</span>
+            <span>T</span>
+            <span>E</span>
+            <span>G</span>
+            <span>O</span>
+            <span>R</span>
+            <span>I</span>
+            <span>E</span>
+            <span>S</span>
+        </h1>
+
+        <div class="box-container">
+            {% if user.is_authenticated %}
+                <a href="views/resorts.html">
+                    <div class="box">
+                        <img src="{% static 'Pics/resorts.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Resorts</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="views/restaurants.html">
+                    <div class="box">
+                        <img src="{% static 'Pics/restaurants.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Restaurants</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="views/malls.html">
+                    <div class="box">
+                        <img src="{% static 'Pics/malls.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Malls</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="views/historicalPlaces.html">
+                    <div class="box">
+                        <img src="{% static 'Pics/historicalPlaces.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Historical Places</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="views/amuzementParks.html">
+                    <div class="box">
+                        <img src="{% static 'Pics/amuzementParks.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Amuzement Parks</h3>
+                        </div>
+                    </div>
+                </a>
+            
+            {% else %}
+                <a href="{% url 'login' %}">
+                    <div class="box">
+                        <img src="{% static 'Pics/resorts.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Resorts</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'login' %}">
+                    <div class="box">
+                        <img src="{% static 'Pics/restaurants.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Restaurants</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'login' %}">
+                    <div class="box">
+                        <img src="{% static 'Pics/malls.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Malls</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'login' %}">
+                    <div class="box">
+                        <img src="{% static 'Pics/historicalPlaces.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Historical Places</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{% url 'login' %}">
+                    <div class="box">
+                        <img src="{% static 'Pics/amuzementParks.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Amuzement Parks</h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- <a href="{% url 'login' %}">
+                    <div class="box">
+                        <img src="{% static 'Pics/amuzementParks.jpg' %}" alt="lr">
+                        <div class="content">
+                            <h3>Amuzement Parks</h3>
+                        </div>
+                    </div>
+                </a> -->
+
+            {% endif %}
+        </div>
+
+    </section>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
+
+{% endblock content %}

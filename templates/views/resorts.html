@@ -1,0 +1,252 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resorts</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .locations {
+            position: relative;
+            top: 150px;
+        }
+
+        .locations .heading{
+            display: flex;
+            justify-content: center;
+        }
+
+        .locations .heading span{
+            color: var(--orange);
+            font-size: 40px;
+            font-weight: bold;
+            background: rgba(255, 165, 0, 0.2);
+            margin: 2px;
+            width: 40px;
+            height: 42px;
+            text-align: center;
+        }
+
+        .locations .box-container{
+            margin-top: 40px;
+            margin-left: 80px;
+            margin-right: 80px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .locations .box-container .box{
+            width: 340px;
+            margin-top: 25px;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        }
+
+        .locations .box-container .box:hover{
+            background-color: var(--orange);
+        }
+
+        .locations .box-container .box img{
+            width: 100%;
+            height: 240px;
+        }
+
+        .locations .box-container .box .content{
+            text-align: center;
+            margin: 10px;
+        }
+
+        .locations .box-container .box .content h3{
+            font-size: 25px;
+            padding-bottom: 15px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="locations">
+        <h1 class="heading">
+            <span>R</span>
+            <span>E</span>
+            <span>S</span>
+            <span>O</span>
+            <span>R</span>
+            <span>T</span>
+            <span>S</span>
+        </h1>
+
+        <div class="box-container">
+            <a href="../views/resorts/leoniaResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/leoniaResort.jpg' %}" alt="lr">
+                    <div class="content">
+                        <h3>Leonia Resort</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../views/resorts/alankritaResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/alankritaResort.jpeg' %}" alt="lr">
+                    <div class="content">
+                        <h3>Aalankrita Resort </h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../views/resorts/golkondaResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/golkondaResort.jpg' %}" alt="lr">
+                    <div class="content">
+                        <h3>Golkonda Resort</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../views/resorts/pragatiResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/pragatiResort.jpg' %}" alt="lr">
+                    <div class="content">
+                        <h3>Pragati Resort</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../views/resorts/brownTownResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/brownTownResort.jpg' %}" alt="lr">
+                    <div class="content">
+                        <h3>Brown Town Resort</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../views/resorts/summerGreenResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/summerGreenResort.jpg' %}" alt="lr">
+                    <div class="content">
+                        <h3>Summer Green Resort</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../views/resorts/buttonEyesResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/buttonEyesResort.jfif' %}" alt="lr">
+                    <div class="content">
+                        <h3>Button Eyes Resort</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../views/resorts/celebrityResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/celebrityResort.jfif' %}" alt="lr">
+                    <div class="content">
+                        <h3>Celebrity Resort</h3>
+                    </div>
+                </div>
+            </a>
+
+            <a href="../views/resorts/lahariResort.html">
+                <div class="box">
+                    <img src="{% static '/Pics/resorts/lahariResort.jfif' %}" alt="lr">
+                    <div class="content">
+                        <h3>Lahari Resort</h3>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

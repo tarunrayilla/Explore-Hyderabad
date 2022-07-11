@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slots booked</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        #heading{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 50%;
+            margin: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table, th, td{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+        td{
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1 id="heading">Slots Booked</h1>
+    <table id="tab">
+        <tr class="tableHead">
+            <th>Name</th>
+            <th>Restaurant</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        {% for row in booked %}
+        <tr>
+            <td>{{row.name}}</td>
+            <td>{{row.restaurant}}</td>
+            <td>{{row.date}}</td>
+            <td>{{row.time}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

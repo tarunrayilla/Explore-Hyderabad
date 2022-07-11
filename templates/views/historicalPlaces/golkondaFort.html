@@ -1,0 +1,262 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golkonda Fort</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .details {
+            position: relative;
+            top: 120px;
+            /* left: 40px;
+            right: 40px; */
+            margin: 0px 40px;
+        }
+
+        .details .heading h1{
+            font-size: 50px;
+        }
+
+        .details .heading span{
+            font-size: 30px;
+        }
+
+        .details .heading .checked {
+            color: var(--orange);
+        }
+
+        .details .sites {
+            margin-top: 10px;
+        }
+
+        .details .sites button{
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-width: 0px;
+            border-radius: 4px;
+        }
+
+        .details .sites button:hover {
+            /* color: rgba(255, 255, 255, 1); */
+            box-shadow: 0 3px 5px #6fa2ee;
+        }
+
+        .details .info {
+            margin-top: 30px;
+        }
+
+        .details .info  p{
+            font-size: 17px;
+        }
+
+        /* .details .info ul{
+            margin-left: 20px;
+        } */
+        
+        .details .info .timings {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 30%;
+            margin: 5px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table th{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="details">
+        <div class="heading">
+            <h1>Golkonda Fort</h1>
+            <span>Rating: </span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star-half-o checked"></span>
+            <h2>Location: Ibrahim Bagh</h2>
+        </div>
+
+        <div class="sites">
+            <button id ="mapsBtn" onclick="window.location.href = 'https://www.google.com/maps/dir//golkonda+fort/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bcb968ea6aea98f:0x6b76ecdfd65a335a?sa=X&hl=en&ved=2ahUKEwiNlOrjgPDyAhUOWX0KHQp9A1UQ9Rd6BAh8EAU';" >View in maps</button>
+            <button id="webBtn" onclick="window.location.href = 'https://telanganatourism.gov.in/partials/destinations/heritage-spots/hyderabad/golconda-fort.html#parentHorizontalTab6';">Visit website</button>
+        </div>
+
+        <div class="info">
+            <h2>Timings</h2>
+            <p class="timings">
+                <!-- Monday	   8am – 5:30pm <br>
+                Tuesday	   8am – 5:30pm <br>
+                Wednesday  8am – 5:30pm <br>
+                Thursday   8am – 5:30pm <br>
+                Friday	   8am – 5:30pm <br>
+                Saturday   8am – 5:30pm <br>
+                Sunday     8am – 5:30pm <br> -->
+                <table>
+                    <tr class='tableHead'>
+                        <th>DAY</th>
+                        <th>TIMINGS</th>
+                    </tr>
+                    <tr>
+                        <th>MONDAY</th>
+                        <th>8:00am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>TUESDAY</th>
+                        <th>8:00am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>WEDNESDAY</th>
+                        <th>8:00am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>THURSDAY</th>
+                        <th>8:00am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>FRIDAY</th>
+                        <th>8:00am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>SATURDAY</th>
+                        <th>8:00am - 5:30pm</th>
+                    </tr>
+                    <tr>
+                        <th>SUNDAY</th>
+                        <th>8:00am - 5:30pm</th>
+                    </tr>
+                   
+                </table>
+            </p>
+
+            <br>
+            <h2>Entry Fee</h2>
+            <ul>
+                <!-- <li>Indian citizens – ₹15 per person</li>
+                <li>Foreign nationals – ₹200 per person</li> -->
+                <table>
+                    <tr>
+                        <th>INDIANS</th>
+                        <th>Rs.15/-</th>
+                    </tr>
+                    <tr>
+                        <th>FOREIGNERS</th>
+                        <th>Rs.200/-</th>
+                    </tr>
+                </table>
+            </ul>
+
+            <br>
+            <h2>About</h2>
+            <p>
+                Formerly known as Mankal, Golconda fort was built by Kakatiya Kings and completed by Rani Rudrama and her successor Prataparudra. However, the structure that we see today was renovated by the Sultan Quli Qutb-ul-Mulk from Qutb Shahi dynasty, who chose Golconda to be the center of his governance. The fort is an engineering marvel and is considered one of the best Hyderabad tourist places. A hand clap at a certain place below the entrance of the dome of Fateh Darwaza echoes and can be heard at Bala Hissar pavilion, which is the highest point of the fort and is almost a kilometer away! Also, the fort has eight gateways, several temples, mosques, stables, royal chambers, and four moveable bridges. The magnificent fort is built on a granite hill and once stored the world-famous Koh-i-Noor, Hope diamond, and Daria-i-Noor. It overlooks the city and is a must visit place for magnificent architecture and historical significance.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

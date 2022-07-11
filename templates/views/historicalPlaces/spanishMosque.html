@@ -1,0 +1,251 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Mosque</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .details {
+            position: relative;
+            top: 120px;
+            /* left: 40px;
+            right: 40px; */
+            margin: 0px 40px;
+        }
+
+        .details .heading h1{
+            font-size: 50px;
+        }
+
+        .details .heading span{
+            font-size: 30px;
+        }
+
+        .details .heading .checked {
+            color: var(--orange);
+        }
+
+        .details .sites {
+            margin-top: 10px;
+        }
+
+        .details .sites button{
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-width: 0px;
+            border-radius: 4px;
+        }
+
+        .details .sites button:hover {
+            /* color: rgba(255, 255, 255, 1); */
+            box-shadow: 0 3px 5px #6fa2ee;
+        }
+
+        .details .info {
+            margin-top: 30px;
+        }
+
+        .details .info  p{
+            font-size: 17px;
+        }
+
+        .details .info ul{
+            margin-left: 20px;
+        }
+        
+        .details .info .timings {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 30%;
+            margin: 5px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table th{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="details">
+        <div class="heading">
+            <h1>Spanish Mosque</h1>
+            <span>Rating: </span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star-half-o checked"></span>
+            <h2>Location: Begumpet</h2>
+        </div>
+
+        <div class="sites">
+            <button id ="mapsBtn" onclick="window.location.href = 'https://www.google.com/maps/dir//spanish+mosque/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x3bcb90a1b717b105:0xc3af23fa58a75e25?sa=X&hl=en&ved=2ahUKEwj4icvIt_LyAhUTQH0KHTphApIQ9Rd6BAhoEAQ';" >View in maps</button>
+        </div>
+
+        <div class="info">
+            <h2>Timings</h2>
+            <p class="timings">
+                <!-- Monday	   5am – 9pm <br>
+                Tuesday	   5am – 9pm <br>
+                Wednesday  5am – 9pm <br>
+                Thursday   5am – 9pm <br>
+                Friday	   5am – 9pm <br>
+                Saturday   5am – 9pm <br>
+                Sunday     5am – 9pm <br> -->
+                <table>
+                    <tr class='tableHead'>
+                        <th>DAY</th>
+                        <th>TIMINGS</th>
+                    </tr>
+                    <tr>
+                        <th>MONDAY</th>
+                        <th>5:00am - 9:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>TUESDAY</th>
+                        <th>5:00am - 9:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>WEDNESDAY</th>
+                        <th>5:00am - 9:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>THURSDAY</th>
+                        <th>5:00am - 9:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>FRIDAY</th>
+                        <th>5:00am - 9:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>SATURDAY</th>
+                        <th>5:00am - 9:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>SUNDAY</th>
+                        <th>5:00am - 9:00pm</th>
+                    </tr>
+                   
+                </table>
+            </p>
+
+            <br>
+            <h2>Entry Fee</h2>
+            <ul>
+                No Entry Fee
+            </ul>
+
+            <br>
+            <h2>About</h2>
+            <p>
+                This beautiful mosque in Hyderabad is also called the Mosque of the Moors because of the Moorish style of architecture that is not found anywhere else in India. The construction of the mosque started under the orders of Vikar-ul-Umra, Iqbal ud Dowla, under the rule of Nizam Mir Mahbub Ali Khan Bahadur. The construction was completed by his elder son Nawab Sultan Ul Mulk Bahadur. This masjid has two other names Masjid Iqbal Ud Daula and Aiwan-E-Begumpet. The design of the mosque is inspired by the Cathedral-Mosque of Córdoba in Spain. It has Quranic verses engraved on the walls. The most interesting feature is the spires instead of the usual circular domes that give the mosque a church-like appearance.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

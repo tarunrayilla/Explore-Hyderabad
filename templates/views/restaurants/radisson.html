@@ -1,0 +1,243 @@
+{% extends 'navigation.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radisson</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+        *{
+            box-sizing: border-box;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        a{
+            color: inherit;
+        }
+
+        :root{
+            --orange: #ffa500;
+        }
+
+        /*
+        *::selection{
+            background: var(--orange);
+        }
+        */
+
+        header{
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 25px;
+            z-index: 1;
+        }
+
+        header .logo{
+            color:white;
+            margin: 18px;
+            margin-left: 30px;
+        }
+
+        header .logo span{
+            text-transform: uppercase;
+        }
+
+        header .logo .first-letter{
+            color: var(--orange);
+        }
+
+        header .navbar{
+            margin-right: 30px;
+        }
+
+        header .navbar a {
+            color: white;
+            font-size: 22px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        header .navbar a:hover{
+            color: var(--orange);
+        }
+
+        .details {
+            position: relative;
+            top: 120px;
+            /* left: 40px;
+            right: 40px; */
+            margin: 0px 40px;
+        }
+
+        .details .heading h1{
+            font-size: 50px;
+        }
+
+        .details .heading span{
+            font-size: 30px;
+        }
+
+        .details .heading .checked {
+            color: var(--orange);
+        }
+
+        .details .sites {
+            margin-top: 10px;
+        }
+
+        .details .sites button{
+            margin-right: 10px;
+            padding: 10px;
+            color: white;
+            background-color: #0d6efd;
+            border-width: 0px;
+            border-radius: 4px;
+        }
+
+        .details .sites button:hover {
+            /* color: rgba(255, 255, 255, 1); */
+            box-shadow: 0 3px 5px #6fa2ee;
+        }
+
+        .details .info {
+            margin-top: 30px;
+        }
+
+        .details .info  p{
+            font-size: 17px;
+        }
+        
+        .details .info .timings {
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+
+        table{
+            border-collapse: collapse;
+            background-color: rgb(239, 243, 241);
+            width: 30%;
+            margin: 5px;
+            /* margin-left: auto;
+            margin-right: auto; */
+        }
+
+        .tableHead{
+            background-color: yellow;
+        }
+
+        table th{
+            border: 2px solid black;
+            padding: 6px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- <header>
+        <div class="logo"><span class="first-letter">H</span><span>yderabad</span></div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="../../home.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Login</a>
+            </div>
+        </nav>
+    </header> -->
+
+    <section class="details">
+        <div class="heading">
+            <h1>Radisson</h1>
+            <span>Rating: </span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star-half-o checked"></span>
+            <h2>Location: HI-TECH city</h2>
+        </div>
+
+        <div class="sites">
+            <button id ="mapsBtn" onclick="window.location.href = 'https://www.google.com/maps/dir/17.4284442,78.4503071/radisson+restaurant+hyderabad+timings/@17.4212266,78.3378167,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3bcb93c0f452b275:0x6e5f0c40080bfc97!2m2!1d78.3630602!2d17.4473329';" >View in maps</button>
+            <button id="webBtn" onclick="window.location.href = 'https://www.radissonhotels.com/en-us/hotels/radisson-hyderabad-hitec-city/restaurant-bar';">Visit website</button>
+            <button id="webBtn" onclick="window.location.href = 'Form/restaurant.html';">Book a table</button>
+        </div>
+
+        <div class="info">
+            <h2>Timings</h2>
+            <p class="timings">
+                <!-- Monday	   10:30am – 9:30pm <br>
+                Tuesday	   10:30am – 9:30pm <br>
+                Wednesday  10:30am – 9:30pm <br>
+                Thursday   10:30am – 9:30pm <br>
+                Friday	   10:30am – 9:30pm <br>
+                Saturday   10:30am – 10pm <br>
+                Sunday     10:30am – 10pm <br> -->
+                <table>
+                    <tr class='tableHead'>
+                        <th>DAY</th>
+                        <th>TIMINGS</th>
+                    </tr>
+                    <tr>
+                        <th>MONDAY</th>
+                        <th>12:00am – 10:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>TUESDAY</th>
+                        <th>12:00am – 10:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>WEDNESDAY</th>
+                        <th>12:00am – 10:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>THURSDAY</th>
+                        <th>12:00am – 10:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>FRIDAY</th>
+                        <th>12:00am – 10:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>SATURDAY</th>
+                        <th>12:00am – 10:00pm</th>
+                    </tr>
+                    <tr>
+                        <th>SUNDAY</th>
+                        <th>12:00am – 10:00pm</th>
+                    </tr>
+                   
+                </table>
+            </p>
+
+            <br>
+            <h2>About</h2>
+            <p>
+                Chill and Terrace is the buffet restaurant at Radisson Blu. As the name suggests, the restaurant boasts of an al fresco dining area in addition to the spacious and comfy but utilitarian dining hall. A la carte selection is available round the clock and is accompanied by buffet during breakfast, lunch, and dinner. Sundays at Radisson are a busy affair owing to the lavish brunch spread across all 3 of its FnB outlets. The buffet spread is fairly small, but the food is dependable. The live kitchen adds a touch of flare to your dining experience and doubles up as a live station. The food menu follows the standard template and offers a mix of local flavours, North Indian favourites, and popular Western dishes such as 'Fish and Chips' and 'Lamb Chops'. The North Indian fare is especially noteworthy, and the 'Rogan Josh' here is head and shoulders above most of the other renditions available in the city.
+            </p>
+        </div>
+
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

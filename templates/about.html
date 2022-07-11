@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+img{
+    height: 240px;
+    width: 40px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1>About Our Page</h1>
+  <p>To build a solution to drive more sightseers to ‘Hyderabad’ and help the Greater Hyderabad Municipal Corporation (GHMC) to manage them in a better way, by providing a self-service option through our portal ‘Discover Hyderabad’ for the incoming explorers</p>
+  <p>The solution should provide complete details various places located in Hyderabad. They should be able to find different places like resorts, malls, restaurants, historical places, amuzement parks. All users will have access to all the information in the site, while the registered user will get additional features like booking a table in a restaurant</p>
+  <p>Any features which you think can help more people bring as tourist to Hyderabad can be implemented. Visit the state government local tourist office and any travel agency to get more details. Help will be provided through the site with the assumption that the person concerned has never visited the state and has got no idea on how to move around, what to see, where to stay.</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <img src="{% static 'Pics/ks.jpeg' %}" alt="Komma" style="width:50%">
+        <div class="details">
+            <h2>Komma Shashank</h2>
+            <p class="title">160119733170</p>
+            <p>kommashashank@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <img src="{% static 'Pics/rt.jpeg' %}" alt="Komma" style="width:50%">
+        <div class="details">
+            <h2>Rayilla Tarun</h2>
+            <p class="title">160119733176</p>
+            <p>rayillatarun@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <img src="{% static 'Pics/ky.jpeg' %}" alt="Komma" style="width:50%">
+        <div class="details">
+            <h2>Yashwanth Katuri</h2>
+            <p class="title">160119733180</p>
+            <p>katuriyashwanth79890@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
